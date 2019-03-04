@@ -97,10 +97,10 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Terminals "
 set $ws2 "2: Spotify "
-set $ws3 "3: Chrome "
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
+set $ws3 "3: Firefox "
+set $ws4 "4: Code "
+set $ws5 "5: Unity "
+set $ws6 "6: Discord "
 set $ws7 "7: "
 set $ws8 "8: "
 set $ws9 "9: "
@@ -132,8 +132,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -170,16 +172,33 @@ bar {
         status_command i3status
 }
 
+#i3-gaps
+smart_gaps on
+gaps inner 30
+gaps outer 15
+
 
 #Custom Keybinds
-bindsym $mod+shift+x exec i3lock
+bindsym $mod+shift+x exec betterlockscreen -l
 
 #Execute on i3
 exec spotify
-exec google-chrome-stable
+exec firefox
 exec_always feh --bg-scale /home/nash/UserScripts/005.png
 exec konsole
+exec code
+exec unity-editor
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec discord
 
 #Assign Workspaces
 for_window [class="Spotify"] move to workspace $ws2
 assign [class="Google-chrome"] $ws3
+assign [class="Firefox"] $ws3
+assign [class="code-oss"] $ws4
+assign [class="Unity"] $ws5
+assign [class="discord"] $ws6
+
+#Diable borders & window title bars
+for_window [class=".*"] border pixel 0
+hide_edge_borders both
