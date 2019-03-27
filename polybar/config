@@ -1,0 +1,53 @@
+[colors]
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+[bar/top]
+modules-right = date
+modules-left = i3
+font-0 = "Hermit:size=13"
+font-1 = Font Awesome 5 Brands:style=Regular
+font-2 = Font Awesome 5 Free:style=Regular
+font-3 = Font Awesome 5 Free:style=Solid
+background = ${colors.background}
+foreground = ${colors.foreground}
+module-margin = 1
+
+[module/date]
+type = internal/date
+date = %B %d, %Y
+
+time = %I:%M %p
+label = %date% %time%
+
+
+[module/i3]
+type = internal/i3
+pin-workspaces = false
+strip-wsnumbers = false
+index-sort = true
+enable-click = true
+fuzzy-match = true
+
+format = <label-state>
+
+label-focused = %icon%
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+label-focused-foreground = ${colors.secondary}
+label-focused-background = ${colors.primary}
+
+ws-icon-0 = term;
+ws-icon-1 = music;
+ws-icon-2 = ffox;
+ws-icon-3 = code;
+ws-icon-4 = discord;
+ws-icon-5 = unity;c
+ws-icon-default = ♟
