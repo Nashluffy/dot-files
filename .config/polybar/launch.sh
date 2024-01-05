@@ -6,9 +6,8 @@ polybar-msg cmd quit
 # Otherwise you can use the nuclear option:
 # killall -q polybar
 
-# Launch bar1 and bar2
-echo "---" | tee -a /tmp/polybar-top.log /tmp/polybar-bottom.log
+echo "---" | tee -a /tmp/polybar-top.log
 polybar top --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
-polybar bottom --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-bottom.log & disown
+#polybar bottom --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-bottom.log & disown
 
-echo "Launched top and bottom bars"
+echo "Launched bar"

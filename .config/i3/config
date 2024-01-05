@@ -1,4 +1,6 @@
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always picom -b
+exec_always exec wal -i ~/code/dot-files/wallpapers -a 80
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 9%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 9%+
@@ -190,3 +192,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+default_border pixel 0
+
+# disable window borders & titles
+for_window [class=".*"] border pixel 0
+hide_edge_borders both
+
+smart_gaps on
+gaps inner 10
+gaps outer 10
