@@ -1,4 +1,3 @@
 # Dotfiles
-Repository for my Arch Linux &amp; i3-gap dot files
+Contains dot-files for i3 and various other tools
 
-![Screenshot](https://github.com/Nashluffy/Dotfiles/blob/master/Screenshot.png)
