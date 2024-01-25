@@ -1,11 +1,11 @@
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always picom -b
-exec_always wal -i ~/code/dot-files/wallpapers
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 9%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 9%+
 bindsym Ctrl+$mod+l exec ~/.config/i3lock-color/lock.sh
-bindsym Ctrl+$mod+b exec wal -i ~/code/dot-files/wallpapers 
+bindsym Ctrl+$mod+b exec wal -s -t -n -i ~/code/dot-files/wallpapers 
+bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 
 
 ###########################################################################
@@ -200,6 +200,6 @@ default_border pixel 0
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
 
-smart_gaps on
-gaps inner 10
-gaps outer 10
+#smart_gaps on
+gaps inner 5
+gaps outer 5

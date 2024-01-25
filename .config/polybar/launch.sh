@@ -6,8 +6,12 @@ polybar-msg cmd quit
 # Otherwise you can use the nuclear option:
 # killall -q polybar
 
-echo "---" | tee -a /tmp/polybar-top.log
-polybar top --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
-#polybar bottom --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-bottom.log & disown
 
-echo "Launched bar"
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar top --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
+  done
+else
+  polybar top --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
+fi
+
