@@ -28,7 +28,7 @@ i3lock \
 --bshl-color=$WRONG          \
 \
 --screen 1                   \
---color 00000000 \
+--color 000000 \
 --clock                      \
 --indicator                  \
 --time-str="%H:%M:%S"        \
