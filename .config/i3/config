@@ -6,6 +6,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 9%+
 bindsym Ctrl+$mod+l exec ~/.config/i3lock-color/lock.sh
 bindsym Ctrl+$mod+b exec hellwal --theme-folder ~/.config/hellwal/themes/ --random
+bindsym Ctrl+$mod+w exec feh --bg-scale --zoom fill ~/code/dot-files/wallpapers/ --random
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 
 ###########################################################################
