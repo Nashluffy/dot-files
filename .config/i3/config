@@ -1,11 +1,11 @@
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/hellwal/update-colours.sh
 exec_always picom -b
 exec --no-startup-id xss-lock --transfer-sleep-lock – i3lock --nofork
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 9%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 9%+
 bindsym Ctrl+$mod+l exec ~/.config/i3lock-color/lock.sh
-bindsym Ctrl+$mod+b exec hellwal --theme-folder ~/.config/hellwal/themes/ --random
+bindsym Ctrl+$mod+b exec ~/.config/hellwal/update-colours.sh
 bindsym Ctrl+$mod+w exec feh --bg-scale --zoom fill ~/code/dot-files/wallpapers/ --random
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 

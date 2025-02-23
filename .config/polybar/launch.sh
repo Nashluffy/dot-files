@@ -12,6 +12,6 @@ if type "xrandr"; then
     MONITOR=$m polybar top --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
   done
 else
-  polybar top -l info --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
+  FC_DEBUG=1 polybar top --config=$HOME/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar-top.log & disown
 fi
 
