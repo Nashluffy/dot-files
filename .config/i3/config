@@ -1,12 +1,12 @@
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always picom -b
+exec --no-startup-id xss-lock --transfer-sleep-lock – i3lock --nofork
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 9%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 9%+
 bindsym Ctrl+$mod+l exec ~/.config/i3lock-color/lock.sh
 bindsym Ctrl+$mod+b exec wal -s -t -n -i ~/code/dot-files/wallpapers 
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
-
 
 ###########################################################################
 ############################ AUTO-GENERATED DEFAULTS ######################
