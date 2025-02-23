@@ -1,7 +1,7 @@
 source .helpers.sh
 
 # Install required binaries available in apt
-sudo apt install i3 polybar feh brightnessctl picom kitty neovim maim
+sudo apt install i3 polybar feh brightnessctl picom kitty neovim maim rofi
 
 if ! i3lock --version 2>&1 | grep --quiet Raymond; then
   # Install packages required to build i3lock-color
@@ -42,11 +42,10 @@ fi
 
 echo "Copying config files to correct location"
 set -o xtrace
-mkdir -p ~/.config/i3 ~/.config/i3lock-color ~/.config/picom ~/.config/polybar ~/.config/hellwal 
+mkdir -p ~/.config/i3 ~/.config/i3lock-color ~/.config/picom ~/.config/polybar ~/.config/hellwal ~/.config/rofi
 cp -r .config/hellwal/* ~/.config/hellwal
-cp .config/i3/config ~/.config/i3/config
-cp .config/i3lock-color/lock.sh ~/.config/i3lock-color/lock.sh
-cp .config/picom/picom.conf ~/.config/picom/picom.conf
-cp .config/polybar/config.ini ~/.config/polybar/config.ini
-cp .config/polybar/launch.sh ~/.config/polybar/launch.sh
+cp -r .config/i3/* ~/.config/i3
+cp -r .config/i3lock-color/* ~/.config/i3lock-color
+cp -r .config/picom/* ~/.config/picom
+cp -r .config/polybar/* ~/.config/polybar
 set +o xtrace
