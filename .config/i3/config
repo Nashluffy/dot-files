@@ -7,6 +7,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 9%+
 bindsym Ctrl+$mod+l exec ~/.config/i3lock-color/lock.sh
 bindsym Ctrl+$mod+b exec ~/.config/hellwal/update-colours.sh
 bindsym Ctrl+$mod+w exec feh --bg-scale --zoom fill ~/code/dot-files/wallpapers/ --random
+bindsym $mod+n exec rofi-wifi-menu
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 
 ###########################################################################
@@ -68,6 +69,8 @@ bindsym $mod+Shift+q kill
 
 # start rofi in emulating dmenu (a program launcher)
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+r exec "rofi -modi run,run -show run"
+
 
 # change focus
 bindsym $mod+j focus left
@@ -185,10 +188,10 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        #bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+#bindsym $mod+r mode "resize"
 
 default_border pixel 0
 

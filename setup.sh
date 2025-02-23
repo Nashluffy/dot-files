@@ -33,6 +33,14 @@ NOTO_EMOJI_DL="https://github.com/googlefonts/noto-emoji/releases/downloads/v2.0
 install_font_if_not_available "Symbols Nerd Font Mono" "${NERD_FONT_DL}" "${reinstall_dependencies}" 
 install_font_if_not_available "Noto Emoji" "${NOTO_EMOJI_DL}" "${reinstall_dependencies}"
 
+if ! command -v rofi-wifi-menu; then
+  TMPDIR=$(mktemp --dry-run)
+  git clone https://github.com/ericmurphyxyz/rofi-wifi-menu.git "${TMPDIR}"
+  sudo mv "${TMPDIR}"/rofi-wifi-menu.sh /usr/local/bin/rofi-wifi-menu
+  rm -rf "${TMPDIR}"
+fi
+
+
 SOURCE_STRING="source ~/code/dot-files/.bashrc"
 if grep -q "${SOURCE_STRING}" ~/.bashrc; then
   echo "~/.bashrc already configured"
