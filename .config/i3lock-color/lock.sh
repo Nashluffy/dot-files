@@ -33,7 +33,7 @@ i3lock \
   --date-color=$blue \
   --time-color=$blue \
   --screen 1 \
-  --blur 5 \
+  --blur 3 \
   --clock \
   --indicator \
   --time-str="%H:%M:%S" \

@@ -33,12 +33,12 @@ else
   echo "${SOURCE_STRING}" >> ~/.bashrc
 fi
 
-echo "Creating symlinks"
+echo "Copying config files to correct location"
 set -o xtrace
 mkdir -p ~/.config/i3 ~/.config/i3lock-color ~/.config/picom ~/.config/polybar 
-ln -fs .config/i3/config ~/.config/i3/config
-ln -fs .config/i3lock-color/lock.sh ~/.config/i3lock-color/lock.sh
-ln -fs .config/picom/picom.conf ~/.config/picom/picom.conf
-ln -fs .config/polybar/config.ini ~/.config/polybar/config.ini
-ln -fs .config/polybar/launch.sh ~/.config/polybar/launch.sh
+cp .config/i3/config ~/.config/i3/config
+cp .config/i3lock-color/lock.sh ~/.config/i3lock-color/lock.sh
+cp .config/picom/picom.conf ~/.config/picom/picom.conf
+cp .config/polybar/config.ini ~/.config/polybar/config.ini
+cp .config/polybar/launch.sh ~/.config/polybar/launch.sh
 set +o xtrace
