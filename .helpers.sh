@@ -15,3 +15,4 @@ download_and_install_font() {
   unzip -d tmp-font tmp-font.zip
   cp -r tmp-font/* ~/.local/share/fonts/user-configured/
 }
+

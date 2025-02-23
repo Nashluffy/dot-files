@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 alpha='dd'
 background='#282a36'
