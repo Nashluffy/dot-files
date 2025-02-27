@@ -13,7 +13,23 @@ blue='#6272a4'
 cyan='#8be9fd'
 green='50fa7b'
 
+# define blur radius
+sigma=30
+
+# create temporary file for screenshot
+tmp=$(mktemp -d) || exit
+trap 'rm -rf "$tmp"' EXIT
+
+# take screenshot of root window and blur it
+if maim --hidecursor "${tmp}/in.png"; then
+    if ffmpeg -loglevel 0 -i "${tmp}/in.png" -vf "gblur=sigma=$sigma" "$tmp"/out.png; then
+        i3lock_options+=(--image="$tmp"/out.png)
+    fi
+fi
+
+# setting fully-transparent default bg prevents white flash while i3lock-color renders image
 i3lock \
+  -c 00000000 \
   --insidever-color=$selection$alpha \
   --insidewrong-color=$selection$alpha \
   --inside-color=$selection$alpha \
@@ -33,7 +49,6 @@ i3lock \
   --date-color=$blue \
   --time-color=$blue \
   --screen 1 \
-  --blur 3 \
   --clock \
   --indicator \
   --time-str="%H:%M:%S" \
@@ -47,4 +62,5 @@ i3lock \
   --ring-width=10 \
   --pass-media-keys \
   --pass-screen-keys \
-  --pass-volume-keys 
+  --pass-volume-keys \
+  $i3lock_options
