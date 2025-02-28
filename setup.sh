@@ -1,7 +1,7 @@
 source .helpers.sh
 
 # Install required binaries available in apt
-sudo apt install i3 polybar feh brightnessctl picom kitty neovim maim rofi
+sudo apt install i3 polybar feh brightnessctl picom kitty neovim maim rofi ffmpeg
 
 if ! i3lock --version 2>&1 | grep --quiet Raymond; then
   # Install packages required to build i3lock-color
